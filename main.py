@@ -1,8 +1,8 @@
 labs = {
     1: "lab_1/lab_1.py",
-    2: "lab_2.py",
-    3: "lab_3.py",
-    4: "lab_4.py"
+    2: "lab_1/lab_2.py",
+    3: "lab_1/lab_3.py",
+    4: "lab_1/lab_4.py"
 }
 
 print('------ Labs ------')
