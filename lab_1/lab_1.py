@@ -56,23 +56,36 @@ print('Correlation between X_stoch_up, Y_stoch_up using numpy method: ',
       df_check['X_stoch_up'].corr(df_check['Y_stoch_up']))
 print('Correlation between X_stoch_down, Y_stoch_down using numpy method: ',
       df_check['X_stoch_down'].corr(df_check['Y_stoch_down']))
-plt.figure()
+
+# First scatter plot
+plt.figure(figsize=(8, 6))
 plt_1 = sns.scatterplot(x='X_prob', y='Y_prob', data=df_check, color='purple')
 plt_1.set_title('Correlation between X_prob, Y_prob')
-plt.figure()
 plt.show()
+
+# Second scatter plot
+plt.figure(figsize=(8, 6))
 plt_2 = sns.scatterplot(x='X_stoch_up', y='Y_stoch_up', data=df_check, color='green', marker='+')
 plt_2.set_title('Correlation between X_stoch_up, Y_stoch_up')
 plt.show()
-plt.figure()
-plt_3 = sns.scatterplot(x='X_stoch_down', y='Y_stoch_down', data=df_check, color='red',marker='+')
-plt_3.set_title('Correlation between X_stoch_down, X_stoch_down')
+
+# Third scatter plot
+plt.figure(figsize=(8, 6))
+plt_3 = sns.scatterplot(x='X_stoch_down', y='Y_stoch_down', data=df_check, color='red', marker='+')
+plt_3.set_title('Correlation between X_stoch_down, Y_stoch_down')
 plt.show()
+
+# Combined Heatmap and Pairplot in a single figure
 plt.figure(figsize=(16, 12))
+# Set the context for plots
 sns.set_context('talk')
+
+# Heatmap
 heat_1 = sns.heatmap(df_check.corr(), annot=True)
-plt.show()
-plt.figure(figsize=(16, 12))
-sns.set_context('talk')
+plt.title('Heatmap of Correlations')
+
+plt.show()  # Show the heatmap first
+
+# Separate figure for pairplot
 pair_1 = sns.pairplot(data=df_check)
 plt.show()
