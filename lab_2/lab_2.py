@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
 # Step 2: Generate data
-np.random.seed(42)
+np.random.seed(12)
 
 n = 100  # number of observations
 alpha_real = 0.4
